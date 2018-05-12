@@ -15,7 +15,7 @@ class Hangman:
                 
             else:
                 self.unknownMovie[i] = "_"
-        print(str(self.unknownMovie))
+        print(' '.join(self.unknownMovie))
         return self.unknownMovie
 
     def checkAnswer(self, userGuess):
@@ -33,9 +33,6 @@ class Hangman:
             self.matchLetter()
             check = self.checkComplete()
             return check
-            
-        #else:
-        print("hiii")
         self.userLife -=1
         
         return False
@@ -44,7 +41,7 @@ class Hangman:
         for k in range(len(self.movieTitleList)):
             if self.movieTitleList[k] == self.userGuess:
                 self.unknownMovie[k] = self.userGuess
-        print(self.unknownMovie)
+        print(' '.join(self.unknownMovie))
         
 
     def checkComplete(self):
@@ -81,4 +78,5 @@ if __name__ == "__main__":
         life = game.userLife
         if life == 0:
             print("sorry you lost")
+            print(' '.join(game.movieTitleList))
     
